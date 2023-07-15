@@ -1,8 +1,11 @@
 const btnele = document.getElementById("btn");
 const piccontainerele = document.querySelector(".pic-container");
 const pictureele = document.querySelector(".picture")
-const animeNameele = document.querySelector(".aime-name")
-
+const animeNameele = document.querySelector(".anime-name")
+console.log(btnele)
+console.log(piccontainerele)
+console.log(pictureele)
+console.log(animeNameele)
 btnele.addEventListener("click", async function(){
     try{
         btnele.disabled = true;
@@ -13,7 +16,7 @@ btnele.addEventListener("click", async function(){
         const data = await response.json();
         btnele.disabled = false;
         btnele.innerText = "Get Picture";
-        piccontainerele.computedStyleMap.display = "block";
+        piccontainerele.style.display = "block";
         pictureele.src = data.url;
         animeNameele.innerText = data.artist;
     } catch(error){
